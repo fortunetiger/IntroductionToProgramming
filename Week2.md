@@ -24,10 +24,16 @@ int main() {
 
 int main() {
 
-	for (int b = 1; b < 10; b++) {
-		for (int a = 1; a < 10; a++) {
-			printf("%d X %d = %d\n", b, a, a * b);
+	int column = 4;
+
+	for (int c = 2; c < 10; c=c+ column) {
+		for (int y = 1; y < 10; y++) {
+			for (int x = 0; x < column; x++) {
+				printf("%d X %d = %d\t", (c+x), y, (c+x)*y);
+			}
+			printf("\n");
 		}
+		printf("\n");
 	}
 
 	return 0;
