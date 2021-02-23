@@ -131,3 +131,41 @@ int main() {
 	return 0;
 }
 ```
+
+평균점수 계산기
+```c
+# include <stdio.h>
+
+int main() {
+
+	float averageScore = 0;
+	int count = 0;
+
+	while (1) {
+		int input = 0;
+		printf("input score : ");
+		scanf_s("%d", &input);
+
+		if (input != -1) {
+			if (input >= 0 && input <= 100) {
+				count++;
+				averageScore += (float)input;
+			}
+			else {
+				printf("[erorr] input correct value. the range of value is 0~100\n");
+			}
+		}
+		else {
+			if (count != 0) {
+				printf("[result] the mean is %f\n", averageScore / (float)count);
+				break;
+			}
+			else {
+				printf("[erorr] cannot divide by zero.\n");
+			}
+		}
+	}
+
+	return 0;
+}
+```
