@@ -16,3 +16,44 @@ int main() {
 	return 0;
 }
 ```
+
+### 종강 타이머 만들기
+```c
+# include <stdio.h>
+# include <time.h>
+# include <Windows.h>
+int main() {
+
+	unsigned int jonggang = 1624276800;
+
+	while (1) {
+
+		time_t current;
+		time(&current);
+
+		int left_time = (int)(jonggang - current);
+		if (left_time <= 0) {
+			printf("Happy jonggang!\n");
+			break;
+		}
+
+		int days = left_time / (24 * 60 * 60);
+		left_time %= (24 * 60 * 60);
+
+		int hour = left_time / (60 * 60);
+		left_time %= (60 * 60);
+
+		int min = left_time / 60;
+		left_time %= 60;
+
+		int sec = left_time;
+
+		printf("%ddays %dhour %dmin %dsec letf until jonggang...\n" , days, hour, min, sec);
+		Sleep(1000);
+		
+		system("cls");
+	}
+
+	return 0;
+}
+```
