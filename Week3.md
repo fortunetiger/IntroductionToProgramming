@@ -57,3 +57,24 @@ int main() {
 	return 0;
 }
 ```
+
+### 2진수 변환기
+```c
+# include <stdio.h>
+
+int main() {
+
+	int input = 0;
+	printf("input the decimal number to convert into bibary : ");
+	scanf_s("%d", &input);
+
+	printf("binary : ");
+	while (input >= 1) {
+		printf("%d", input % 2);
+		input>>=1 ;
+	}
+	printf("\n");
+
+	return 0;
+}
+```
