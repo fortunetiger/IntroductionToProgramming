@@ -78,3 +78,16 @@ int main() {
 	return 0;
 }
 ```
+
+### 2의 n승 계산기
+```c
+# include <stdio.h>
+int main() {
+    int input = 0;
+    printf("input n : ");
+    scanf_s("%d", &input);
+    unsigned int result = 2 << input;
+    printf("2^%d : %d\n", input, result);
+    return 0;
+}
+```
